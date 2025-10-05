@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> Currency Converter </title>
+    </head>
+    <body onload="changeCur()">
+        <h1>Currency Converter</h1>
+        <h3>Converting from:</h3>
+        <input onchange="changeCur()" type="radio" id="eur" name="fromCurrency" value="eur">
+        <label for="eur">Euros</label><br>
+        <input onchange="changeCur()" type="radio" id="usd" name="fromCurrency" value="usd">
+        <label for="usd">USD</label>
+        <h3>To:</h3>
+        <p class="outCur">[make selection]</p>
+        <br>
+        <label for="amount"> Amount:</label>
+        <input onchange="convert()" type="number" id="amount" name="amount"> <span class="outCur"> [make selection] </span>
+
+        <h3>Converted amount:</h3>
+        <p> <span id="output">?</span> <span class="outCur">[make selection]</span> </p>
+        <br>
+        <p> <em>note: rate at time of website conception: 1.17</em></p>
+        <script src="currency.js"></script>
+    </body>
+</html>
