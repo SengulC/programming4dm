@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> Weather </title>
+    </head>
+    <body onload="getData()">
+        <h1 id="title">The weather in your location right now</h1>
+        <ul id="cr-list">
+            <li> Your timezone: <span id="timezone"> {...} </span> </li>
+            <li> The latitude: <span id="latitude"> {...} </span>° </li>
+            <li> The longitude: <span id="longitude"> {...} </span>° </li>
+
+            <li> The lowest temperature for today: <span id="lowest_temp"> {...} </span><span class="weather_code"> ? </span> </li>
+            <li> The highest temperature for today: <span id="highest_temp"> {...} </span><span class="weather_code"> ? </span> </li>
+        </ul>
+    <script src="weather.js"></script>
+    </body>
+</html>
