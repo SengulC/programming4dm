@@ -1,0 +1,32 @@
+<!-- - Create a collection of 'things' that contain 'things' which contain 'things'
+For example create a music library which has genres for which each
+contains a set of musicians who each have a number of popular songs
+in that genre. (or a movies library which can also have genres and
+movies which have actors)
+- Create a UI that lets you generate a playlist of songs (or movies, or …)
+- Make sure that your get songs (or movies) only once, avoid duplication
+- When you click a button, a new playlist is generated -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> Playlist generator </title>
+        <link rel="stylesheet" href="playlist.css">
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.min.js">
+        </script>
+        <script src="playlist.js"></script>
+    </head>
+    <body>
+        <div id="generate-div">
+            <h1>Generate a playlist.</h1>
+            <br><br>
+            <button>Click me!</button>
+        </div>
+        <div id="playlist">
+            <ul id="playlist-ul">
+            </ul>
+        </div>
+    </body>
+</html>

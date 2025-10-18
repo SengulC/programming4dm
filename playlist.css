@@ -1,0 +1,18 @@
+#generate-div {
+    background-color: aliceblue;
+}
+
+div {
+    padding: 10em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+button {
+    width: 5em;
+}
+
+#playlist {
+    background-color:antiquewhite;
+}
