@@ -24,9 +24,23 @@ const songs = {
 }
 
 function getRandomPlaylist() {
-    let pop = Object.values(songs.genres.pop).flat(1)[(Math.random() * 9) | 0];
-    let alternative = Object.values(songs.genres.alternative).flat(1)[(Math.random() * 9) | 0];
-    let rock = Object.values(songs.genres.rock).flat(1)[(Math.random() * 9) | 0];
+    let randomSong = Object.values(songs.genres.pop).flat(1)[(Math.random() * 9) | 0];
+    // random song from the pop discography (flattened into 1d array)
+    let artist = Object.entries(songs.genres.pop).find(([_, songList]) => 
+        songList.includes(randomSong))[0];
+    // get the corresponding artist for the random song [_, song]: [key, val] pairs
+    let pop =  `${randomSong} by ${artist}`;
+    
+    randomSong = Object.values(songs.genres.alternative).flat(1)[(Math.random() * 9) | 0]; 
+    artist = Object.entries(songs.genres.alternative).find(([_, songList]) => 
+        songList.includes(randomSong))[0];
+    let alternative =  `${randomSong} by ${artist}`;
+    
+    randomSong = Object.values(songs.genres.rock).flat(1)[(Math.random() * 9) | 0];
+    artist = Object.entries(songs.genres.rock).find(([_, songList]) => 
+        songList.includes(randomSong))[0];
+    let rock = `${randomSong} by ${artist}`;
+
     console.log(pop, alternative, rock);
     return [pop, alternative, rock];
 }
@@ -42,4 +56,16 @@ $(document).ready(function () {
             $("<li>").append($("<a>").text(song))
         )
     );
+
+    $("button").click(function(){
+        const $ul = $("#playlist-ul");
+        const playlist = getRandomPlaylist();
+
+        $ul.empty();
+        $ul.append(
+            playlist.map(song => 
+                $("<li>").append($("<a>").text(song))
+            )
+        );
+    });
 });
