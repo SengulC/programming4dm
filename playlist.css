@@ -16,3 +16,8 @@ button {
 #playlist {
     background-color:antiquewhite;
 }
+
+li {
+    font-style: oblique;
+    font-weight: bolder;
+}
